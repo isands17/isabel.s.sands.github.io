@@ -409,6 +409,43 @@ body {
 
 .project:hover { border-left-color: var(--border-md); }
 
+/* Image figure */
+.project-figure {
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* Placeholder shown when src is empty — hidden automatically once src is set */
+.project-img--placeholder:not([src]),
+.project-img--placeholder[src=""] {
+  display: none;
+}
+
+.project-figure figcaption {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+  max-width: 560px;
+  line-height: 1.5;
+}
+
+/* Hide the caption too when there's no image */
+.project-img--placeholder:not([src]) + figcaption,
+.project-img--placeholder[src=""] + figcaption {
+  display: none;
+}
+
 .project-title {
   font-size: 1rem;
   font-weight: 500;
@@ -561,6 +598,22 @@ body {
 .cv-prose {
   font-size: 0.9rem;
   color: var(--text-dim);
+}
+
+.cv-subsection-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.cv-entry-note {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 /* ── Footer ──────────────────────────────────────────── */
